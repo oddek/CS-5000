@@ -1,0 +1,2 @@
+sudo trace-cmd start -b 10000 -e 'sched_wakeup*' -e sched_switch -e gpio_value -e irq_handler_entry -e irq_handler_exit cyclictest -l 300000 --threa
+ds 1 -i 400 -m --smp -p 60 --policy fifo --default system

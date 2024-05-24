@@ -1,0 +1,4 @@
+#!/bin/sh
+
+insmod /lib/modules/$(uname -r)/kernel/drivers/dma/cma.ko
+

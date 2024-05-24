@@ -1,0 +1,13 @@
+
+#add_subdirectory(DataMoverTest)
+add_subdirectory(AllocTest)
+add_subdirectory(CodecTest)
+add_subdirectory(GenericNetlinkBenchmark)
+add_subdirectory(KernelGeneratorTest)
+add_subdirectory(MemoryTest)
+add_subdirectory(FullTest)
+add_subdirectory(PreemptionTest)
+add_subdirectory(SharedMemoryBenchmark)
+add_subdirectory(TaskMonitor)
+add_subdirectory(TestTest)
+add_subdirectory(TimerTest)

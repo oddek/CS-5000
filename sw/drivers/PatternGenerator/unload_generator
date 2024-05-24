@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rmmod /lib/modules/$(uname -r)/kernel/drivers/PatternGenerator.ko

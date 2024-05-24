@@ -1,0 +1,1636 @@
+diff --git a/board/altera/cyclone5-socdk/qts/iocsr_config.h b/board/altera/cyclone5-socdk/qts/iocsr_config.h
+index a571fb3e50..ede425aefd 100644
+--- a/board/altera/cyclone5-socdk/qts/iocsr_config.h
++++ b/board/altera/cyclone5-socdk/qts/iocsr_config.h
+@@ -1,4 +1,8 @@
+-/* SPDX-License-Identifier: BSD-3-Clause */
++/* SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause */
++/*
++ * Copyright (C) 2022 Intel Corporation <www.intel.com>
++ *
++ */
+ /*
+  * Altera SoCFPGA IOCSR configuration
+  */
+@@ -76,22 +80,22 @@ const unsigned long iocsr_scan_chain1_table[] = {
+ 	0x00002000,
+ 	0x00000400,
+ 	0x00000000,
+-	0x00401000,
++	0x00C03000,
+ 	0x00000003,
+ 	0x00000000,
+ 	0x00000000,
+ 	0x00000200,
+-	0x00600802,
++	0x00601806,
+ 	0x00000000,
+ 	0x80200000,
+ 	0x80000600,
+ 	0x00000200,
+ 	0x00000100,
+-	0x00300401,
+-	0xC0100400,
+-	0x40100000,
+-	0x40000300,
+-	0x000C0100,
++	0x00300C03,
++	0xC0300C00,
++	0xC0300000,
++	0xC0000300,
++	0x000C0300,
+ 	0x00000080,
+ };
+ 
+@@ -108,28 +112,28 @@ const unsigned long iocsr_scan_chain2_table[] = {
+ 	0x00040020,
+ 	0x06018060,
+ 	0x00004000,
+-	0x0C010040,
++	0x0C0300C0,
+ 	0x04010000,
+ 	0x00000030,
+ 	0x00000000,
+ 	0x03004010,
+ 	0x00002000,
+-	0x06008020,
+-	0x02008000,
+-	0x02000018,
+-	0x00006008,
+-	0x01802008,
++	0x06018060,
++	0x06018000,
++	0x06000018,
++	0x00006018,
++	0x01806018,
+ 	0x00001000,
+-	0x03004010,
+-	0x01004000,
+-	0x0100000C,
+-	0x00003004,
+-	0x00C01004,
++	0x0300C030,
++	0x0300C000,
++	0x0300000C,
++	0x0000300C,
++	0x00C0300C,
+ 	0x00000800,
+ };
+ 
+ const unsigned long iocsr_scan_chain3_table[] = {
+-	0x2C420D80,
++	0x0C420D80,
+ 	0x082000FF,
+ 	0x0A804001,
+ 	0x07900000,
+@@ -175,22 +179,22 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x20000300,
+ 	0x00040000,
+ 	0x50670000,
+-	0x00000070,
++	0x00000010,
+ 	0x24590000,
+ 	0x00001000,
+ 	0xA0000034,
+ 	0x0D000001,
+-	0x906808A2,
+-	0xA2834024,
+-	0x05141A00,
+-	0x808A20D0,
+-	0x34024906,
+-	0x01A00A28,
+-	0xA20D0000,
+-	0x24906808,
+-	0x00A28340,
++	0x40680208,
++	0x41034051,
++	0x12481A00,
++	0x802080D0,
++	0x34051406,
++	0x01A02490,
++	0x080D0000,
++	0x51406802,
++	0x02490340,
+ 	0xD000001A,
+-	0x06808A20,
++	0x06802080,
+ 	0x10040000,
+ 	0x00200000,
+ 	0x10040000,
+@@ -249,22 +253,22 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x20000300,
+ 	0x00040000,
+ 	0x50670000,
+-	0x00000070,
++	0x00000010,
+ 	0x24590000,
+ 	0x00001000,
+ 	0xA0000034,
+ 	0x0D000001,
+-	0x906808A2,
+-	0xA2834024,
+-	0x05141A00,
+-	0x808A20D0,
+-	0x34024906,
++	0x40680208,
++	0x49034051,
++	0x12481A02,
++	0x80A280D0,
++	0x34030C06,
+ 	0x01A00040,
+-	0xA20D0002,
+-	0x24906808,
+-	0x00A28340,
+-	0xD005141A,
+-	0x06808A20,
++	0x280D0002,
++	0x5140680A,
++	0x02490340,
++	0xD012481A,
++	0x0680A280,
+ 	0x10040000,
+ 	0x00200000,
+ 	0x10040000,
+@@ -282,17 +286,17 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x99300001,
+ 	0x34343400,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A808,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0x00040100,
+ 	0x00000800,
+ 	0x00000000,
+ 	0x00001208,
+ 	0x00482000,
+-	0x000001C1,
++	0x01000000,
+ 	0x00000000,
+ 	0x00410482,
+ 	0x0006A000,
+@@ -302,7 +306,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x0002A000,
+ 	0x0001E400,
+ 	0x5506A000,
+-	0x00E1D404,
++	0x00E1D400,
+ 	0x00000000,
+ 	0xC880090C,
+ 	0x00003001,
+@@ -310,11 +314,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00000000,
+ 	0x2020C243,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA02,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x00010040,
+ 	0x00000200,
+ 	0x00000000,
+@@ -324,23 +328,23 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x80000000,
+ 	0x00104120,
+ 	0x00000200,
+-	0xAC255F80,
+-	0xF1C71C71,
++	0xAC0D5F80,
++	0xFFFFFFFF,
+ 	0x14F3690D,
+ 	0x1A041414,
+ 	0x00D00000,
+-	0x14864000,
+-	0x59647A05,
+-	0xBA28A3D8,
+-	0xF511451E,
+-	0x0341D348,
++	0x04864000,
++	0x59647A01,
++	0xD32CA3DE,
++	0xF551451E,
++	0x035CD348,
+ 	0x821A0000,
+ 	0x0000D000,
+-	0x04510680,
+-	0xD859647A,
+-	0x1EBA28A3,
+-	0x48F51145,
+-	0x000341D3,
++	0x05140680,
++	0xDE69A47A,
++	0x1ED32CA3,
++	0x48F55E79,
++	0x00035C92,
+ 	0x00080200,
+ 	0x00001000,
+ 	0x00080200,
+@@ -348,7 +352,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x000A8000,
+ 	0x00075000,
+ 	0x541A8000,
+-	0x03875011,
++	0x03875001,
+ 	0x10000000,
+ 	0x00000000,
+ 	0x0080C000,
+@@ -356,11 +360,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00003FC2,
+ 	0x00820000,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A808,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0x00040100,
+ 	0x00000800,
+ 	0x00000000,
+@@ -376,7 +380,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00020080,
+ 	0x00000400,
+ 	0x5506A000,
+-	0x00E1D404,
++	0x00E1D400,
+ 	0x00000000,
+ 	0x0000090C,
+ 	0x00000010,
+@@ -384,11 +388,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00000000,
+ 	0x2020C243,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA02,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x00015000,
+ 	0x0000F200,
+ 	0x00000000,
+@@ -398,23 +402,23 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x80000000,
+ 	0x00104120,
+ 	0x00000200,
+-	0xAC255F80,
+-	0xF1C71C71,
++	0xAC0D5F80,
++	0xFFFFFFFF,
+ 	0x14F3690D,
+ 	0x1A041414,
+ 	0x00D00000,
+ 	0x14864000,
+ 	0x59647A05,
+-	0xBA28A3D8,
+-	0xF511451E,
+-	0x8341D348,
+-	0x821A0124,
++	0xD228A3DE,
++	0xF55E791E,
++	0x035CD348,
++	0x821A0186,
+ 	0x0000D000,
+ 	0x00000680,
+-	0xD859647A,
+-	0x1EBA28A3,
+-	0x48F51145,
+-	0x000341D3,
++	0xDE69A47A,
++	0x1E9228A3,
++	0x48F65E79,
++	0x00035CD3,
+ 	0x00080200,
+ 	0x00001000,
+ 	0x00080200,
+@@ -422,7 +426,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x000A8000,
+ 	0x00075000,
+ 	0x541A8000,
+-	0x03875011,
++	0x03875001,
+ 	0x10000000,
+ 	0x00000000,
+ 	0x0080C000,
+@@ -430,11 +434,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x04000002,
+ 	0x00820000,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A808,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0x00040100,
+ 	0x00000800,
+ 	0x00000000,
+@@ -450,7 +454,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x0002A000,
+ 	0x0001E400,
+ 	0x5506A000,
+-	0x00E1D404,
++	0x00E1D400,
+ 	0x00000000,
+ 	0xC880090C,
+ 	0x00003001,
+@@ -458,11 +462,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00000000,
+ 	0x2020C243,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA02,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x00010040,
+ 	0x00000200,
+ 	0x00000000,
+@@ -472,23 +476,23 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x80000000,
+ 	0x00104120,
+ 	0x00000200,
+-	0xAC255F80,
+-	0xF1C71C71,
++	0xAC0D5F80,
++	0xFFFFFFFF,
+ 	0x14F3690D,
+ 	0x1A041414,
+ 	0x00D00000,
+-	0x14864000,
+-	0x59647A05,
+-	0xBA28A3D8,
+-	0xF511451E,
+-	0x0341D348,
++	0x0C864000,
++	0x79E47A03,
++	0xB2AAA3D9,
++	0xF751451E,
++	0x0342D348,
+ 	0x821A0000,
+ 	0x0000D000,
+ 	0x00000680,
+-	0xD859647A,
+-	0x1EBA28A3,
+-	0x48F51145,
+-	0x000341D3,
++	0xD159647A,
++	0x1ED32CA3,
++	0x48F75145,
++	0x000342D3,
+ 	0x00080200,
+ 	0x00001000,
+ 	0x00080200,
+@@ -496,7 +500,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x000A8000,
+ 	0x00075000,
+ 	0x541A8000,
+-	0x03875011,
++	0x03875001,
+ 	0x10000000,
+ 	0x00000000,
+ 	0x0080C000,
+@@ -504,11 +508,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x04000002,
+ 	0x00820000,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A808,
++	0x01C3A800,
+ 	0xAA0D4000,
+-	0x01C3A810,
++	0x01C3A800,
+ 	0x00040100,
+ 	0x00000800,
+ 	0x00000000,
+@@ -524,7 +528,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00020080,
+ 	0x00000400,
+ 	0x5506A000,
+-	0x00E1D404,
++	0x00E1D400,
+ 	0x00000000,
+ 	0x0000090C,
+ 	0x00000010,
+@@ -532,37 +536,37 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00000000,
+ 	0x2020C243,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA02,
++	0x0070EA00,
+ 	0x2A835000,
+-	0x0070EA04,
++	0x0070EA00,
+ 	0x00010040,
+ 	0x00000200,
+ 	0x00000000,
+ 	0x00000482,
+-	0x40120800,
+-	0x00000070,
++	0x00120800,
++	0x00400000,
+ 	0x80000000,
+ 	0x00104120,
+ 	0x00000200,
+-	0xAC255F80,
+-	0xF1C71C71,
++	0xAC0D5F80,
++	0xFFFFFFFF,
+ 	0x14F1690D,
+ 	0x1A041414,
+ 	0x00D00000,
+-	0x14864000,
+-	0x59647A05,
+-	0xBA28A3D8,
+-	0xF511451E,
+-	0x0341D348,
++	0x04864000,
++	0x69A47A01,
++	0x9228A3DE,
++	0xF55E791E,
++	0x034C9248,
+ 	0x821A0000,
+ 	0x0000D000,
+ 	0x00000680,
+-	0xD859647A,
+-	0x1EBA28A3,
+-	0x48F51145,
+-	0x000341D3,
++	0xDE59647A,
++	0x1ED32CA3,
++	0x48F55E79,
++	0x00035CD3,
+ 	0x00080200,
+ 	0x00001000,
+ 	0x00080200,
+@@ -570,7 +574,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x000A8000,
+ 	0x00075000,
+ 	0x541A8000,
+-	0x03875011,
++	0x03875001,
+ 	0x10000000,
+ 	0x00000000,
+ 	0x0080C000,
+@@ -579,11 +583,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00820000,
+ 	0x00489800,
+ 	0x001A1A1A,
+-	0x085506A0,
++	0x005506A0,
+ 	0x0000E1D4,
+-	0x045506A0,
++	0x005506A0,
+ 	0x0000E1D4,
+-	0x085506A0,
++	0x005506A0,
+ 	0x8000E1D4,
+ 	0x00000200,
+ 	0x00000004,
+@@ -599,7 +603,7 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x40000002,
+ 	0x00000100,
+ 	0x00000002,
+-	0x022A8350,
++	0x002A8350,
+ 	0x000070EA,
+ 	0x86000000,
+ 	0x08000004,
+@@ -607,11 +611,11 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x00482000,
+ 	0x21800000,
+ 	0x00101061,
+-	0x021541A8,
++	0x001541A8,
+ 	0x00003875,
+-	0x011541A8,
++	0x001541A8,
+ 	0x00003875,
+-	0x021541A8,
++	0x001541A8,
+ 	0x20003875,
+ 	0x00000080,
+ 	0x00000001,
+@@ -622,30 +626,30 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ 	0x90400000,
+ 	0x00000820,
+ 	0xC0000001,
+-	0x38D612AF,
+-	0x86F8E38E,
++	0xFFD606AF,
++	0x86FFFFFF,
+ 	0x0A0A78B4,
+ 	0x000D020A,
+ 	0x00006800,
+-	0x028A4320,
+-	0xEC2CB23D,
+-	0x8F5D1451,
+-	0xA47A88A2,
+-	0x0001A0E9,
++	0x00824320,
++	0xEF34D23D,
++	0x8F691451,
++	0xA47AAF3C,
++	0x0001AE69,
+ 	0x00410D00,
+ 	0x40000068,
+ 	0x3D000003,
+-	0x51EC2CB2,
+-	0xA28F5D14,
+-	0xE9A47A88,
+-	0x000001A0,
++	0x91E8ACB2,
++	0x2C8F49E7,
++	0x69A47A2B,
++	0x000001AE,
+ 	0x00000401,
+ 	0x00000008,
+ 	0x00000401,
+ 	0x00000008,
+ 	0x00000540,
+ 	0x000003A8,
+-	0x08AA0D40,
++	0x00AA0D40,
+ 	0x8001C3A8,
+ 	0x0000007F,
+ 	0x00000000,
+@@ -656,4 +660,5 @@ const unsigned long iocsr_scan_chain3_table[] = {
+ };
+ 
+ 
++
+ #endif /* __SOCFPGA_IOCSR_CONFIG_H__ */
+diff --git a/board/altera/cyclone5-socdk/qts/pinmux_config.h b/board/altera/cyclone5-socdk/qts/pinmux_config.h
+index ec64ae17a1..c3aa95cb98 100644
+--- a/board/altera/cyclone5-socdk/qts/pinmux_config.h
++++ b/board/altera/cyclone5-socdk/qts/pinmux_config.h
+@@ -1,4 +1,8 @@
+-/* SPDX-License-Identifier: BSD-3-Clause */
++/* SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause */
++/*
++ * Copyright (C) 2022 Intel Corporation <www.intel.com>
++ *
++ */
+ /*
+  * Altera SoCFPGA PinMux configuration
+  */
+diff --git a/board/altera/cyclone5-socdk/qts/pll_config.h b/board/altera/cyclone5-socdk/qts/pll_config.h
+index a46d124e9e..5fbe31d173 100644
+--- a/board/altera/cyclone5-socdk/qts/pll_config.h
++++ b/board/altera/cyclone5-socdk/qts/pll_config.h
+@@ -1,4 +1,7 @@
+ /* SPDX-License-Identifier: BSD-3-Clause */
++/*
++ * Copyright (C) 2022 Intel Corporation <www.intel.com>
++ */
+ /*
+  * Altera SoCFPGA Clock and PLL configuration
+  */
+@@ -80,5 +83,4 @@
+ #define CFG_HPS_ALTERAGRP_MAINCLK 4
+ #define CFG_HPS_ALTERAGRP_DBGATCLK 4
+ 
+-
+ #endif /* __SOCFPGA_PLL_CONFIG_H__ */
+diff --git a/board/altera/cyclone5-socdk/qts/sdram_config.h b/board/altera/cyclone5-socdk/qts/sdram_config.h
+index e3a8cfbfb3..28df8fbc58 100644
+--- a/board/altera/cyclone5-socdk/qts/sdram_config.h
++++ b/board/altera/cyclone5-socdk/qts/sdram_config.h
+@@ -1,6 +1,11 @@
+-/* SPDX-License-Identifier: BSD-3-Clause */
++/* SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause */
++/*
++ * Copyright (C) 2022 Intel Corporation <www.intel.com>
++ *
++ */
+ /*
+  * Altera SoCFPGA SDRAM configuration
++ *
+  */
+ 
+ #ifndef __SOCFPGA_SDRAM_CONFIG_H__
+@@ -33,9 +38,9 @@
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_AL			0
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TCL			7
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TCWL			6
+-#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TFAW			14
++#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TFAW			12
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TRFC			104
+-#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TRRD			3
++#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING1_TRRD			4
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING2_IF_TRCD		6
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING2_IF_TREFI		3120
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING2_IF_TRP		6
+@@ -45,15 +50,15 @@
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING3_TMRD			4
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING3_TRAS			14
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING3_TRC			20
+-#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING3_TRTP			3
++#define CFG_HPS_SDR_CTRLCFG_DRAMTIMING3_TRTP			4
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING4_PWRDOWNEXIT		3
+ #define CFG_HPS_SDR_CTRLCFG_DRAMTIMING4_SELFRFSHEXIT		512
+-#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR 0
+-#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR_BC 0
+-#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR_DIFF_CHIP 0
++#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR 2
++#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR_BC 2
++#define CFG_HPS_SDR_CTRLCFG_EXTRATIME1_CFG_EXTRA_CTL_CLK_RD_TO_WR_DIFF_CHIP 2
+ #define CFG_HPS_SDR_CTRLCFG_FIFOCFG_INCSYNC			0
+ #define CFG_HPS_SDR_CTRLCFG_FIFOCFG_SYNCMODE			0
+-#define CFG_HPS_SDR_CTRLCFG_FPGAPORTRST			0
++#define CFG_HPS_SDR_CTRLCFG_FPGAPORTRST			0x1FF
+ #define CFG_HPS_SDR_CTRLCFG_LOWPWREQ_SELFRFSHMASK		3
+ #define CFG_HPS_SDR_CTRLCFG_LOWPWRTIMING_AUTOPDCYCLES	0
+ #define CFG_HPS_SDR_CTRLCFG_LOWPWRTIMING_CLKDISABLECYCLES	8
+@@ -62,15 +67,15 @@
+ #define CFG_HPS_SDR_CTRLCFG_MPPACING_1_THRESHOLD2_3_0	0
+ #define CFG_HPS_SDR_CTRLCFG_MPPACING_2_THRESHOLD2_35_4	0x41041041
+ #define CFG_HPS_SDR_CTRLCFG_MPPACING_3_THRESHOLD2_59_36	0x410410
+-#define CFG_HPS_SDR_CTRLCFG_MPPRIORITY_USERPRIORITY		0x3FFD1088
+-#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_0_THRESHOLDRSTCYCLES_31_0	0x01010101
+-#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_1_THRESHOLDRSTCYCLES_63_32	0x01010101
+-#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_2_THRESHOLDRSTCYCLES_79_64	0x0101
++#define CFG_HPS_SDR_CTRLCFG_MPPRIORITY_USERPRIORITY		0x0
++#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_0_THRESHOLDRSTCYCLES_31_0 0x01010101
++#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_1_THRESHOLDRSTCYCLES_63_32 0x01010101
++#define CFG_HPS_SDR_CTRLCFG_MPTHRESHOLDRST_2_THRESHOLDRSTCYCLES_79_64 0x0101
+ #define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_0_STATICWEIGHT_31_0	0x21084210
+-#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_1_STATICWEIGHT_49_32	0x1EF84
+-#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_1_SUMOFWEIGHT_13_0	0x2020
++#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_1_STATICWEIGHT_49_32	0x10441
++#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_1_SUMOFWEIGHT_13_0	0x78
+ #define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_2_SUMOFWEIGHT_45_14	0x0
+-#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_3_SUMOFWEIGHT_63_46	0xF800
++#define CFG_HPS_SDR_CTRLCFG_MPWIEIGHT_3_SUMOFWEIGHT_63_46	0x0
+ #define CFG_HPS_SDR_CTRLCFG_PHYCTRL_PHYCTRL_0		0x200
+ #define CFG_HPS_SDR_CTRLCFG_PORTCFG_AUTOPCHEN		0
+ #define CFG_HPS_SDR_CTRLCFG_RFIFOCMAP_RFIFOCMAP		0x760210
+@@ -83,31 +88,31 @@
+ #define RW_MGR_ACTIVATE_0_AND_1_WAIT1	0x0E
+ #define RW_MGR_ACTIVATE_0_AND_1_WAIT2	0x10
+ #define RW_MGR_ACTIVATE_1	0x0F
+-#define RW_MGR_CLEAR_DQS_ENABLE	0x48
+-#define RW_MGR_GUARANTEED_READ	0x4B
+-#define RW_MGR_GUARANTEED_READ_CONT	0x53
+-#define RW_MGR_GUARANTEED_WRITE	0x17
+-#define RW_MGR_GUARANTEED_WRITE_WAIT0	0x1A
+-#define RW_MGR_GUARANTEED_WRITE_WAIT1	0x1E
+-#define RW_MGR_GUARANTEED_WRITE_WAIT2	0x18
+-#define RW_MGR_GUARANTEED_WRITE_WAIT3	0x1C
++#define RW_MGR_CLEAR_DQS_ENABLE	0x49
++#define RW_MGR_GUARANTEED_READ	0x4C
++#define RW_MGR_GUARANTEED_READ_CONT	0x54
++#define RW_MGR_GUARANTEED_WRITE	0x18
++#define RW_MGR_GUARANTEED_WRITE_WAIT0	0x1B
++#define RW_MGR_GUARANTEED_WRITE_WAIT1	0x1F
++#define RW_MGR_GUARANTEED_WRITE_WAIT2	0x19
++#define RW_MGR_GUARANTEED_WRITE_WAIT3	0x1D
+ #define RW_MGR_IDLE	0x00
+-#define RW_MGR_IDLE_LOOP1	0x7C
+-#define RW_MGR_IDLE_LOOP2	0x7B
+-#define RW_MGR_INIT_RESET_0_CKE_0	0x6E
+-#define RW_MGR_INIT_RESET_1_CKE_0	0x73
+-#define RW_MGR_LFSR_WR_RD_BANK_0	0x21
+-#define RW_MGR_LFSR_WR_RD_BANK_0_DATA	0x24
+-#define RW_MGR_LFSR_WR_RD_BANK_0_DQS	0x23
+-#define RW_MGR_LFSR_WR_RD_BANK_0_NOP	0x22
+-#define RW_MGR_LFSR_WR_RD_BANK_0_WAIT	0x31
+-#define RW_MGR_LFSR_WR_RD_BANK_0_WL_1	0x20
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0	0x35
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0_DATA	0x38
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0_DQS	0x37
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0_NOP	0x36
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0_WAIT	0x45
+-#define RW_MGR_LFSR_WR_RD_DM_BANK_0_WL_1	0x34
++#define RW_MGR_IDLE_LOOP1	0x7B
++#define RW_MGR_IDLE_LOOP2	0x7A
++#define RW_MGR_INIT_RESET_0_CKE_0	0x6F
++#define RW_MGR_INIT_RESET_1_CKE_0	0x74
++#define RW_MGR_LFSR_WR_RD_BANK_0	0x22
++#define RW_MGR_LFSR_WR_RD_BANK_0_DATA	0x25
++#define RW_MGR_LFSR_WR_RD_BANK_0_DQS	0x24
++#define RW_MGR_LFSR_WR_RD_BANK_0_NOP	0x23
++#define RW_MGR_LFSR_WR_RD_BANK_0_WAIT	0x32
++#define RW_MGR_LFSR_WR_RD_BANK_0_WL_1	0x21
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0	0x36
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0_DATA	0x39
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0_DQS	0x38
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0_NOP	0x37
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0_WAIT	0x46
++#define RW_MGR_LFSR_WR_RD_DM_BANK_0_WL_1	0x35
+ #define RW_MGR_MRS0_DLL_RESET	0x02
+ #define RW_MGR_MRS0_DLL_RESET_MIRR	0x08
+ #define RW_MGR_MRS0_USER	0x07
+@@ -119,18 +124,19 @@
+ #define RW_MGR_MRS3	0x05
+ #define RW_MGR_MRS3_MIRR	0x0B
+ #define RW_MGR_PRECHARGE_ALL	0x12
+-#define RW_MGR_READ_B2B	0x58
+-#define RW_MGR_READ_B2B_WAIT1	0x60
+-#define RW_MGR_READ_B2B_WAIT2	0x6A
++#define RW_MGR_READ_B2B	0x59
++#define RW_MGR_READ_B2B_WAIT1	0x61
++#define RW_MGR_READ_B2B_WAIT2	0x6B
+ #define RW_MGR_REFRESH_ALL	0x14
+ #define RW_MGR_RETURN	0x01
+-#define RW_MGR_SGLE_READ	0x7E
++#define RW_MGR_SGLE_READ	0x7D
+ #define RW_MGR_ZQCL	0x06
+ 
+ /* Sequencer defines configuration */
++#define AFI_CLK_FREQ	401
+ #define AFI_RATE_RATIO	1
+-#define CALIB_LFIFO_OFFSET	7
+-#define CALIB_VFIFO_OFFSET	5
++#define CALIB_LFIFO_OFFSET	8
++#define CALIB_VFIFO_OFFSET	6
+ #define ENABLE_SUPER_QUICK_CALIBRATION	0
+ #define IO_DELAY_PER_DCHAIN_TAP	25
+ #define IO_DELAY_PER_DQS_EN_DCHAIN_TAP	25
+@@ -142,14 +148,14 @@
+ #define IO_DQS_EN_PHASE_MAX	7
+ #define IO_DQS_IN_DELAY_MAX	31
+ #define IO_DQS_IN_RESERVE	4
+-#define IO_DQS_OUT_RESERVE	6
++#define IO_DQS_OUT_RESERVE	4
+ #define IO_IO_IN_DELAY_MAX	31
+ #define IO_IO_OUT1_DELAY_MAX	31
+ #define IO_IO_OUT2_DELAY_MAX	0
+ #define IO_SHIFT_DQS_EN_WHEN_SHIFT_DQS	0
+ #define MAX_LATENCY_COUNT_WIDTH	5
+ #define READ_VALID_FIFO_SIZE	16
+-#define REG_FILE_INIT_SEQ_SIGNATURE	0x55550483
++#define REG_FILE_INIT_SEQ_SIGNATURE	0x555504dd
+ #define RW_MGR_MEM_ADDRESS_MIRRORING	0
+ #define RW_MGR_MEM_DATA_MASK_WIDTH	5
+ #define RW_MGR_MEM_DATA_WIDTH	40
+@@ -162,26 +168,26 @@
+ #define RW_MGR_MEM_VIRTUAL_GROUPS_PER_READ_DQS	1
+ #define RW_MGR_MEM_VIRTUAL_GROUPS_PER_WRITE_DQS	1
+ #define RW_MGR_TRUE_MEM_DATA_MASK_WIDTH	5
+-#define TINIT_CNTR0_VAL	132
++#define TINIT_CNTR0_VAL	99
+ #define TINIT_CNTR1_VAL	32
+ #define TINIT_CNTR2_VAL	32
+-#define TRESET_CNTR0_VAL	132
++#define TRESET_CNTR0_VAL	99
+ #define TRESET_CNTR1_VAL	99
+ #define TRESET_CNTR2_VAL	10
+ 
+ /* Sequencer ac_rom_init configuration */
+-const u32 ac_rom_init[] ={
++const u32 ac_rom_init[] = {
+ 	0x20700000,
+ 	0x20780000,
+ 	0x10080431,
+ 	0x10080530,
+-	0x10090004,
++	0x10090044,
+ 	0x100a0008,
+ 	0x100b0000,
+ 	0x10380400,
+ 	0x10080449,
+ 	0x100804c8,
+-	0x100a0004,
++	0x100a0024,
+ 	0x10090010,
+ 	0x100b0000,
+ 	0x30780000,
+@@ -210,7 +216,7 @@ const u32 ac_rom_init[] ={
+ };
+ 
+ /* Sequencer inst_rom_init configuration */
+-const u32 inst_rom_init[] ={
++const u32 inst_rom_init[] = {
+ 	0x80000,
+ 	0x80680,
+ 	0x8180,
+@@ -232,6 +238,7 @@ const u32 inst_rom_init[] ={
+ 	0x900,
+ 	0x80680,
+ 	0x980,
++	0xa680,
+ 	0x8680,
+ 	0x80680,
+ 	0xb68,
+@@ -322,16 +329,14 @@ const u32 inst_rom_init[] ={
+ 	0xe680,
+ 	0x80680,
+ 	0x0,
+-	0x0,
+-	0xa000,
+ 	0x8000,
++	0xa000,
++	0xc000,
+ 	0x80000,
+ 	0x80,
+-	0x80,
+-	0x80,
+-	0x80,
+-	0xa080,
+ 	0x8080,
++	0xa080,
++	0xc080,
+ 	0x80080,
+ 	0x9180,
+ 	0x8680,
+diff --git a/include/config_distro_bootcmd.h b/include/config_distro_bootcmd.h
+index 9d2a225e7e..ac0c1e05f2 100644
+--- a/include/config_distro_bootcmd.h
++++ b/include/config_distro_bootcmd.h
+@@ -26,75 +26,75 @@
+  */
+ 
+ #define BOOTENV_SHARED_BLKDEV_BODY(devtypel) \
+-		"if " #devtypel " dev ${devnum}; then " \
+-			"devtype=" #devtypel "; " \
+-			"run scan_dev_for_boot_part; " \
+-		"fi\0"
++        "if " #devtypel " dev ${devnum}; then " \
++            "devtype=" #devtypel "; " \
++            "run scan_dev_for_boot_part; " \
++        "fi\0"
+ 
+ #define BOOTENV_SHARED_BLKDEV(devtypel) \
+-	#devtypel "_boot=" \
+-	BOOTENV_SHARED_BLKDEV_BODY(devtypel)
++    #devtypel "_boot=" \
++    BOOTENV_SHARED_BLKDEV_BODY(devtypel)
+ 
+ #define BOOTENV_DEV_BLKDEV(devtypeu, devtypel, instance) \
+-	"bootcmd_" #devtypel #instance "=" \
+-		"devnum=" #instance "; " \
+-		"run " #devtypel "_boot\0"
++    "bootcmd_" #devtypel #instance "=" \
++        "devnum=" #instance "; " \
++        "run " #devtypel "_boot\0"
+ 
+ #define BOOTENV_DEV_NAME_BLKDEV(devtypeu, devtypel, instance) \
+-	#devtypel #instance " "
++    #devtypel #instance " "
+ 
+ #ifdef CONFIG_SANDBOX
+-#define BOOTENV_SHARED_HOST	BOOTENV_SHARED_BLKDEV(host)
+-#define BOOTENV_DEV_HOST	BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_HOST	BOOTENV_DEV_NAME_BLKDEV
++#define BOOTENV_SHARED_HOST BOOTENV_SHARED_BLKDEV(host)
++#define BOOTENV_DEV_HOST    BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_HOST   BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_SHARED_HOST
+ #define BOOTENV_DEV_HOST \
+-	BOOT_TARGET_DEVICES_references_HOST_without_CONFIG_SANDBOX
++    BOOT_TARGET_DEVICES_references_HOST_without_CONFIG_SANDBOX
+ #define BOOTENV_DEV_NAME_HOST \
+-	BOOT_TARGET_DEVICES_references_HOST_without_CONFIG_SANDBOX
++    BOOT_TARGET_DEVICES_references_HOST_without_CONFIG_SANDBOX
+ #endif
+ 
+ #ifdef CONFIG_CMD_MMC
+-#define BOOTENV_SHARED_MMC	BOOTENV_SHARED_BLKDEV(mmc)
+-#define BOOTENV_DEV_MMC		BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_MMC	BOOTENV_DEV_NAME_BLKDEV
++#define BOOTENV_SHARED_MMC  BOOTENV_SHARED_BLKDEV(mmc)
++#define BOOTENV_DEV_MMC     BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_MMC    BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_SHARED_MMC
+ #define BOOTENV_DEV_MMC \
+-	BOOT_TARGET_DEVICES_references_MMC_without_CONFIG_CMD_MMC
++    BOOT_TARGET_DEVICES_references_MMC_without_CONFIG_CMD_MMC
+ #define BOOTENV_DEV_NAME_MMC \
+-	BOOT_TARGET_DEVICES_references_MMC_without_CONFIG_CMD_MMC
++    BOOT_TARGET_DEVICES_references_MMC_without_CONFIG_CMD_MMC
+ #endif
+ 
+ #ifdef CONFIG_CMD_UBIFS
+ #define BOOTENV_SHARED_UBIFS \
+-	"ubifs_boot=" \
+-		"if ubi part ${bootubipart} ${bootubioff} && " \
+-			"ubifsmount ubi0:${bootubivol}; " \
+-		"then " \
+-			"devtype=ubi; " \
+-			"devnum=ubi0; " \
+-			"bootfstype=ubifs; " \
+-			"distro_bootpart=${bootubivol}; " \
+-			"run scan_dev_for_boot; " \
+-			"ubifsumount; " \
+-		"fi\0"
++    "ubifs_boot=" \
++        "if ubi part ${bootubipart} ${bootubioff} && " \
++            "ubifsmount ubi0:${bootubivol}; " \
++        "then " \
++            "devtype=ubi; " \
++            "devnum=ubi0; " \
++            "bootfstype=ubifs; " \
++            "distro_bootpart=${bootubivol}; " \
++            "run scan_dev_for_boot; " \
++            "ubifsumount; " \
++        "fi\0"
+ #define BOOTENV_DEV_UBIFS_BOOTUBIOFF(off) #off /* type check, throw error when called with more args */
+ #define BOOTENV_DEV_UBIFS(devtypeu, devtypel, instance, bootubipart, bootubivol, ...) \
+-	"bootcmd_ubifs" #instance "=" \
+-		"bootubipart=" #bootubipart "; " \
+-		"bootubivol=" #bootubivol "; " \
+-		"bootubioff=" BOOTENV_DEV_UBIFS_BOOTUBIOFF(__VA_ARGS__) "; " \
+-		"run ubifs_boot\0"
++    "bootcmd_ubifs" #instance "=" \
++        "bootubipart=" #bootubipart "; " \
++        "bootubivol=" #bootubivol "; " \
++        "bootubioff=" BOOTENV_DEV_UBIFS_BOOTUBIOFF(__VA_ARGS__) "; " \
++        "run ubifs_boot\0"
+ #define BOOTENV_DEV_NAME_UBIFS(devtypeu, devtypel, instance, ...) \
+-	#devtypel #instance " "
++    #devtypel #instance " "
+ #else
+ #define BOOTENV_SHARED_UBIFS
+ #define BOOTENV_DEV_UBIFS \
+-	BOOT_TARGET_DEVICES_references_UBIFS_without_CONFIG_CMD_UBIFS
++    BOOT_TARGET_DEVICES_references_UBIFS_without_CONFIG_CMD_UBIFS
+ #define BOOTENV_DEV_NAME_UBIFS \
+-	BOOT_TARGET_DEVICES_references_UBIFS_without_CONFIG_CMD_UBIFS
++    BOOT_TARGET_DEVICES_references_UBIFS_without_CONFIG_CMD_UBIFS
+ #endif
+ 
+ #ifdef CONFIG_EFI_LOADER
+@@ -121,9 +121,9 @@
+  * scheme if we don't have an explicit fdtfile variable.
+  */
+ #define BOOTENV_EFI_SET_FDTFILE_FALLBACK                                  \
+-	"if test -z \"${fdtfile}\" -a -n \"${soc}\"; then "               \
+-	  "setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; "           \
+-	"fi; "
++    "if test -z \"${fdtfile}\" -a -n \"${soc}\"; then "               \
++      "setenv efi_fdtfile ${soc}-${board}${boardver}.dtb; "           \
++    "fi; "
+ #else
+ #ifndef BOOTENV_EFI_SET_FDTFILE_FALLBACK
+ #define BOOTENV_EFI_SET_FDTFILE_FALLBACK
+@@ -132,54 +132,54 @@
+ 
+ #ifdef CONFIG_CMD_BOOTEFI_BOOTMGR
+ #define BOOTENV_EFI_BOOTMGR                                               \
+-	"boot_efi_bootmgr="                                               \
+-		"if fdt addr -q ${fdt_addr_r}; then "                     \
+-			"bootefi bootmgr ${fdt_addr_r};"                  \
+-		"else "                                                   \
+-			"bootefi bootmgr;"                                \
+-		"fi\0"
++    "boot_efi_bootmgr="                                               \
++        "if fdt addr -q ${fdt_addr_r}; then "                     \
++            "bootefi bootmgr ${fdt_addr_r};"                  \
++        "else "                                                   \
++            "bootefi bootmgr;"                                \
++        "fi\0"
+ #else
+ #define BOOTENV_EFI_BOOTMGR
+ #endif
+ 
+ #define BOOTENV_SHARED_EFI                                                \
+-	BOOTENV_EFI_BOOTMGR                                               \
+-	\
+-	"boot_efi_binary="                                                \
+-		"load ${devtype} ${devnum}:${distro_bootpart} "           \
+-			"${kernel_addr_r} efi/boot/"BOOTEFI_NAME"; "      \
+-		"if fdt addr -q ${fdt_addr_r}; then "                     \
+-			"bootefi ${kernel_addr_r} ${fdt_addr_r};"         \
+-		"else "                                                   \
+-			"bootefi ${kernel_addr_r} ${fdtcontroladdr};"     \
+-		"fi\0"                                                    \
+-	\
+-	"load_efi_dtb="                                                   \
+-		"load ${devtype} ${devnum}:${distro_bootpart} "           \
+-			"${fdt_addr_r} ${prefix}${efi_fdtfile}\0"         \
+-	\
+-	"efi_dtb_prefixes=/ /dtb/ /dtb/current/\0"                        \
+-	"scan_dev_for_efi="                                               \
+-		"setenv efi_fdtfile ${fdtfile}; "                         \
+-		BOOTENV_EFI_SET_FDTFILE_FALLBACK                          \
+-		BOOTENV_RUN_EXTENSION_INIT                                \
+-		"for prefix in ${efi_dtb_prefixes}; do "                  \
+-			"if test -e ${devtype} "                          \
+-					"${devnum}:${distro_bootpart} "   \
+-					"${prefix}${efi_fdtfile}; then "  \
+-				"run load_efi_dtb; "                      \
+-				BOOTENV_RUN_EXTENSION_APPLY               \
+-			"fi;"                                             \
+-		"done;"                                                   \
+-		"run boot_efi_bootmgr;"                                   \
+-		"if test -e ${devtype} ${devnum}:${distro_bootpart} "     \
+-					"efi/boot/"BOOTEFI_NAME"; then "  \
+-				"echo Found EFI removable media binary "  \
+-					"efi/boot/"BOOTEFI_NAME"; "       \
+-				"run boot_efi_binary; "                   \
+-				"echo EFI LOAD FAILED: continuing...; "   \
+-		"fi; "                                                    \
+-		"setenv efi_fdtfile\0"
++    BOOTENV_EFI_BOOTMGR                                               \
++    \
++    "boot_efi_binary="                                                \
++        "load ${devtype} ${devnum}:${distro_bootpart} "           \
++            "${kernel_addr_r} efi/boot/"BOOTEFI_NAME"; "      \
++        "if fdt addr -q ${fdt_addr_r}; then "                     \
++            "bootefi ${kernel_addr_r} ${fdt_addr_r};"         \
++        "else "                                                   \
++            "bootefi ${kernel_addr_r} ${fdtcontroladdr};"     \
++        "fi\0"                                                    \
++    \
++    "load_efi_dtb="                                                   \
++        "load ${devtype} ${devnum}:${distro_bootpart} "           \
++            "${fdt_addr_r} ${prefix}${efi_fdtfile}\0"         \
++    \
++    "efi_dtb_prefixes=/ /dtb/ /dtb/current/\0"                        \
++    "scan_dev_for_efi="                                               \
++        "setenv efi_fdtfile ${fdtfile}; "                         \
++        BOOTENV_EFI_SET_FDTFILE_FALLBACK                          \
++        BOOTENV_RUN_EXTENSION_INIT                                \
++        "for prefix in ${efi_dtb_prefixes}; do "                  \
++            "if test -e ${devtype} "                          \
++                    "${devnum}:${distro_bootpart} "   \
++                    "${prefix}${efi_fdtfile}; then "  \
++                "run load_efi_dtb; "                      \
++                BOOTENV_RUN_EXTENSION_APPLY               \
++            "fi;"                                             \
++        "done;"                                                   \
++        "run boot_efi_bootmgr;"                                   \
++        "if test -e ${devtype} ${devnum}:${distro_bootpart} "     \
++                    "efi/boot/"BOOTEFI_NAME"; then "  \
++                "echo Found EFI removable media binary "  \
++                    "efi/boot/"BOOTEFI_NAME"; "       \
++                "run boot_efi_binary; "                   \
++                "echo EFI LOAD FAILED: continuing...; "   \
++        "fi; "                                                    \
++        "setenv efi_fdtfile\0"
+ #define SCAN_DEV_FOR_EFI "run scan_dev_for_efi;"
+ #else
+ #define BOOTENV_SHARED_EFI
+@@ -187,98 +187,98 @@
+ #endif
+ 
+ #ifdef CONFIG_SATA
+-#define BOOTENV_SHARED_SATA	BOOTENV_SHARED_BLKDEV(sata)
+-#define BOOTENV_DEV_SATA	BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_SATA	BOOTENV_DEV_NAME_BLKDEV
++#define BOOTENV_SHARED_SATA BOOTENV_SHARED_BLKDEV(sata)
++#define BOOTENV_DEV_SATA    BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_SATA   BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_SHARED_SATA
+ #define BOOTENV_DEV_SATA \
+-	BOOT_TARGET_DEVICES_references_SATA_without_CONFIG_SATA
++    BOOT_TARGET_DEVICES_references_SATA_without_CONFIG_SATA
+ #define BOOTENV_DEV_NAME_SATA \
+-	BOOT_TARGET_DEVICES_references_SATA_without_CONFIG_SATA
++    BOOT_TARGET_DEVICES_references_SATA_without_CONFIG_SATA
+ #endif
+ 
+ #ifdef CONFIG_NVME
+ #define BOOTENV_RUN_NVME_INIT "run nvme_init; "
+ #define BOOTENV_SET_NVME_NEED_INIT "setenv nvme_need_init; "
+ #define BOOTENV_SHARED_NVME \
+-	"nvme_init=" \
+-		"if ${nvme_need_init}; then " \
+-			"setenv nvme_need_init false; " \
+-			"nvme scan; " \
+-		"fi\0" \
+-	\
+-	"nvme_boot=" \
+-		BOOTENV_RUN_PCI_ENUM \
+-		BOOTENV_RUN_NVME_INIT \
+-		BOOTENV_SHARED_BLKDEV_BODY(nvme)
+-#define BOOTENV_DEV_NVME	BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_NVME	BOOTENV_DEV_NAME_BLKDEV
++    "nvme_init=" \
++        "if ${nvme_need_init}; then " \
++            "setenv nvme_need_init false; " \
++            "nvme scan; " \
++        "fi\0" \
++    \
++    "nvme_boot=" \
++        BOOTENV_RUN_PCI_ENUM \
++        BOOTENV_RUN_NVME_INIT \
++        BOOTENV_SHARED_BLKDEV_BODY(nvme)
++#define BOOTENV_DEV_NVME    BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_NVME   BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_RUN_NVME_INIT
+ #define BOOTENV_SET_NVME_NEED_INIT
+ #define BOOTENV_SHARED_NVME
+ #define BOOTENV_DEV_NVME \
+-	BOOT_TARGET_DEVICES_references_NVME_without_CONFIG_NVME
++    BOOT_TARGET_DEVICES_references_NVME_without_CONFIG_NVME
+ #define BOOTENV_DEV_NAME_NVME \
+-	BOOT_TARGET_DEVICES_references_NVME_without_CONFIG_NVME
++    BOOT_TARGET_DEVICES_references_NVME_without_CONFIG_NVME
+ #endif
+ 
+ #ifdef CONFIG_SCSI
+ #define BOOTENV_RUN_SCSI_INIT "run scsi_init; "
+ #define BOOTENV_SET_SCSI_NEED_INIT "scsi_need_init=; "
+ #define BOOTENV_SHARED_SCSI \
+-	"scsi_init=" \
+-		"if ${scsi_need_init}; then " \
+-			"scsi_need_init=false; " \
+-			"scsi scan; " \
+-		"fi\0" \
+-	\
+-	"scsi_boot=" \
+-		BOOTENV_RUN_PCI_ENUM \
+-		BOOTENV_RUN_SCSI_INIT \
+-		BOOTENV_SHARED_BLKDEV_BODY(scsi)
+-#define BOOTENV_DEV_SCSI	BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_SCSI	BOOTENV_DEV_NAME_BLKDEV
++    "scsi_init=" \
++        "if ${scsi_need_init}; then " \
++            "scsi_need_init=false; " \
++            "scsi scan; " \
++        "fi\0" \
++    \
++    "scsi_boot=" \
++        BOOTENV_RUN_PCI_ENUM \
++        BOOTENV_RUN_SCSI_INIT \
++        BOOTENV_SHARED_BLKDEV_BODY(scsi)
++#define BOOTENV_DEV_SCSI    BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_SCSI   BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_RUN_SCSI_INIT
+ #define BOOTENV_SET_SCSI_NEED_INIT
+ #define BOOTENV_SHARED_SCSI
+ #define BOOTENV_DEV_SCSI \
+-	BOOT_TARGET_DEVICES_references_SCSI_without_CONFIG_SCSI
++    BOOT_TARGET_DEVICES_references_SCSI_without_CONFIG_SCSI
+ #define BOOTENV_DEV_NAME_SCSI \
+-	BOOT_TARGET_DEVICES_references_SCSI_without_CONFIG_SCSI
++    BOOT_TARGET_DEVICES_references_SCSI_without_CONFIG_SCSI
+ #endif
+ 
+ #ifdef CONFIG_IDE
+ #define BOOTENV_RUN_IDE_INIT "run ide_init; "
+ #define BOOTENV_SET_IDE_NEED_INIT "setenv ide_need_init; "
+ #define BOOTENV_SHARED_IDE \
+-	"ide_init=" \
+-		"if ${ide_need_init}; then " \
+-			"setenv ide_need_init false; " \
+-			"ide reset; " \
+-		"fi\0" \
+-	\
+-	"ide_boot=" \
+-		BOOTENV_RUN_IDE_INIT \
+-		BOOTENV_SHARED_BLKDEV_BODY(ide)
+-#define BOOTENV_DEV_IDE		BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_IDE	BOOTENV_DEV_NAME_BLKDEV
++    "ide_init=" \
++        "if ${ide_need_init}; then " \
++            "setenv ide_need_init false; " \
++            "ide reset; " \
++        "fi\0" \
++    \
++    "ide_boot=" \
++        BOOTENV_RUN_IDE_INIT \
++        BOOTENV_SHARED_BLKDEV_BODY(ide)
++#define BOOTENV_DEV_IDE     BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_IDE    BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_RUN_IDE_INIT
+ #define BOOTENV_SET_IDE_NEED_INIT
+ #define BOOTENV_SHARED_IDE
+ #define BOOTENV_DEV_IDE \
+-	BOOT_TARGET_DEVICES_references_IDE_without_CONFIG_IDE
++    BOOT_TARGET_DEVICES_references_IDE_without_CONFIG_IDE
+ #define BOOTENV_DEV_NAME_IDE \
+-	BOOT_TARGET_DEVICES_references_IDE_without_CONFIG_IDE
++    BOOT_TARGET_DEVICES_references_IDE_without_CONFIG_IDE
+ #endif
+ 
+ #if defined(CONFIG_PCI)
+ #define BOOTENV_RUN_PCI_ENUM "run boot_pci_enum; "
+ #define BOOTENV_SHARED_PCI \
+-	"boot_pci_enum=pci enum\0"
++    "boot_pci_enum=pci enum\0"
+ #else
+ #define BOOTENV_RUN_PCI_ENUM
+ #define BOOTENV_SHARED_PCI
+@@ -287,45 +287,45 @@
+ #ifdef CONFIG_CMD_USB
+ #define BOOTENV_RUN_NET_USB_START "run boot_net_usb_start; "
+ #define BOOTENV_SHARED_USB \
+-	"boot_net_usb_start=usb start\0" \
+-	"usb_boot=" \
+-		"usb start; " \
+-		BOOTENV_SHARED_BLKDEV_BODY(usb)
+-#define BOOTENV_DEV_USB		BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_USB	BOOTENV_DEV_NAME_BLKDEV
++    "boot_net_usb_start=usb start\0" \
++    "usb_boot=" \
++        "usb start; " \
++        BOOTENV_SHARED_BLKDEV_BODY(usb)
++#define BOOTENV_DEV_USB     BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_USB    BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_RUN_NET_USB_START
+ #define BOOTENV_SHARED_USB
+ #define BOOTENV_DEV_USB \
+-	BOOT_TARGET_DEVICES_references_USB_without_CONFIG_CMD_USB
++    BOOT_TARGET_DEVICES_references_USB_without_CONFIG_CMD_USB
+ #define BOOTENV_DEV_NAME_USB \
+-	BOOT_TARGET_DEVICES_references_USB_without_CONFIG_CMD_USB
++    BOOT_TARGET_DEVICES_references_USB_without_CONFIG_CMD_USB
+ #endif
+ 
+ #ifdef CONFIG_CMD_VIRTIO
+ #define BOOTENV_RUN_VIRTIO_INIT "run virtio_init; "
+ #define BOOTENV_SET_VIRTIO_NEED_INIT "virtio_need_init=; "
+ #define BOOTENV_SHARED_VIRTIO \
+-	"virtio_init=" \
+-		"if ${virtio_need_init}; then " \
+-			"virtio_need_init=false; " \
+-			"virtio scan; " \
+-		"fi\0" \
+-	\
+-	"virtio_boot=" \
+-		BOOTENV_RUN_PCI_ENUM \
+-		BOOTENV_RUN_VIRTIO_INIT \
+-		BOOTENV_SHARED_BLKDEV_BODY(virtio)
+-#define BOOTENV_DEV_VIRTIO	BOOTENV_DEV_BLKDEV
+-#define BOOTENV_DEV_NAME_VIRTIO	BOOTENV_DEV_NAME_BLKDEV
++    "virtio_init=" \
++        "if ${virtio_need_init}; then " \
++            "virtio_need_init=false; " \
++            "virtio scan; " \
++        "fi\0" \
++    \
++    "virtio_boot=" \
++        BOOTENV_RUN_PCI_ENUM \
++        BOOTENV_RUN_VIRTIO_INIT \
++        BOOTENV_SHARED_BLKDEV_BODY(virtio)
++#define BOOTENV_DEV_VIRTIO  BOOTENV_DEV_BLKDEV
++#define BOOTENV_DEV_NAME_VIRTIO BOOTENV_DEV_NAME_BLKDEV
+ #else
+ #define BOOTENV_RUN_VIRTIO_INIT
+ #define BOOTENV_SET_VIRTIO_NEED_INIT
+ #define BOOTENV_SHARED_VIRTIO
+ #define BOOTENV_DEV_VIRTIO \
+-	BOOT_TARGET_DEVICES_references_VIRTIO_without_CONFIG_CMD_VIRTIO
++    BOOT_TARGET_DEVICES_references_VIRTIO_without_CONFIG_CMD_VIRTIO
+ #define BOOTENV_DEV_NAME_VIRTIO \
+-	BOOT_TARGET_DEVICES_references_VIRTIO_without_CONFIG_CMD_VIRTIO
++    BOOT_TARGET_DEVICES_references_VIRTIO_without_CONFIG_CMD_VIRTIO
+ #endif
+ 
+ #if defined(CONFIG_CMD_DHCP)
+@@ -361,86 +361,86 @@
+  * not an EFI binary, we just return from the bootefi command and continue.
+  */
+ #define BOOTENV_EFI_RUN_DHCP \
+-	"setenv efi_fdtfile ${fdtfile}; "                                 \
+-	BOOTENV_EFI_SET_FDTFILE_FALLBACK                                  \
+-	"setenv efi_old_vci ${bootp_vci};"                                \
+-	"setenv efi_old_arch ${bootp_arch};"                              \
+-	"setenv bootp_vci " BOOTENV_EFI_PXE_VCI ";"                       \
+-	"setenv bootp_arch " BOOTENV_EFI_PXE_ARCH ";"                     \
+-	"if dhcp ${kernel_addr_r}; then "                                 \
+-		"tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};"              \
+-		"if fdt addr -q ${fdt_addr_r}; then "                     \
+-			"bootefi ${kernel_addr_r} ${fdt_addr_r}; "        \
+-		"else "                                                   \
+-			"bootefi ${kernel_addr_r} ${fdtcontroladdr};"     \
+-		"fi;"                                                     \
+-	"fi;"                                                             \
+-	"setenv bootp_vci ${efi_old_vci};"                                \
+-	"setenv bootp_arch ${efi_old_arch};"                              \
+-	"setenv efi_fdtfile;"                                             \
+-	"setenv efi_old_arch;"                                            \
+-	"setenv efi_old_vci;"
++    "setenv efi_fdtfile ${fdtfile}; "                                 \
++    BOOTENV_EFI_SET_FDTFILE_FALLBACK                                  \
++    "setenv efi_old_vci ${bootp_vci};"                                \
++    "setenv efi_old_arch ${bootp_arch};"                              \
++    "setenv bootp_vci " BOOTENV_EFI_PXE_VCI ";"                       \
++    "setenv bootp_arch " BOOTENV_EFI_PXE_ARCH ";"                     \
++    "if dhcp ${kernel_addr_r}; then "                                 \
++        "tftpboot ${fdt_addr_r} dtb/${efi_fdtfile};"              \
++        "if fdt addr -q ${fdt_addr_r}; then "                     \
++            "bootefi ${kernel_addr_r} ${fdt_addr_r}; "        \
++        "else "                                                   \
++            "bootefi ${kernel_addr_r} ${fdtcontroladdr};"     \
++        "fi;"                                                     \
++    "fi;"                                                             \
++    "setenv bootp_vci ${efi_old_vci};"                                \
++    "setenv bootp_arch ${efi_old_arch};"                              \
++    "setenv efi_fdtfile;"                                             \
++    "setenv efi_old_arch;"                                            \
++    "setenv efi_old_vci;"
+ #else
+ #define BOOTENV_EFI_RUN_DHCP
+ #endif
+ #define BOOTENV_DEV_DHCP(devtypeu, devtypel, instance) \
+-	"bootcmd_dhcp=" \
+-		"devtype=" #devtypel "; " \
+-		BOOTENV_RUN_NET_USB_START \
+-		BOOTENV_RUN_PCI_ENUM \
+-		"if dhcp ${scriptaddr} ${boot_script_dhcp}; then " \
+-			"source ${scriptaddr}; " \
+-		"fi;" \
+-		BOOTENV_EFI_RUN_DHCP \
+-		"\0"
++    "bootcmd_dhcp=" \
++        "devtype=" #devtypel "; " \
++        BOOTENV_RUN_NET_USB_START \
++        BOOTENV_RUN_PCI_ENUM \
++        "if dhcp ${scriptaddr} ${boot_script_dhcp}; then " \
++            "source ${scriptaddr}; " \
++        "fi;" \
++        BOOTENV_EFI_RUN_DHCP \
++        "\0"
+ #define BOOTENV_DEV_NAME_DHCP(devtypeu, devtypel, instance) \
+-	"dhcp "
++    "dhcp "
+ #else
+ #define BOOTENV_DEV_DHCP \
+-	BOOT_TARGET_DEVICES_references_DHCP_without_CONFIG_CMD_DHCP
++    BOOT_TARGET_DEVICES_references_DHCP_without_CONFIG_CMD_DHCP
+ #define BOOTENV_DEV_NAME_DHCP \
+-	BOOT_TARGET_DEVICES_references_DHCP_without_CONFIG_CMD_DHCP
++    BOOT_TARGET_DEVICES_references_DHCP_without_CONFIG_CMD_DHCP
+ #endif
+ 
+ #if defined(CONFIG_CMD_DHCP) && defined(CONFIG_CMD_PXE)
+ #define BOOTENV_DEV_PXE(devtypeu, devtypel, instance) \
+-	"bootcmd_pxe=" \
+-		BOOTENV_RUN_NET_USB_START \
+-		BOOTENV_RUN_PCI_ENUM \
+-		"dhcp; " \
+-		"if pxe get; then " \
+-			"pxe boot; " \
+-		"fi\0"
++    "bootcmd_pxe=" \
++        BOOTENV_RUN_NET_USB_START \
++        BOOTENV_RUN_PCI_ENUM \
++        "dhcp; " \
++        "if pxe get; then " \
++            "pxe boot; " \
++        "fi\0"
+ #define BOOTENV_DEV_NAME_PXE(devtypeu, devtypel, instance) \
+-	"pxe "
++    "pxe "
+ #else
+ #define BOOTENV_DEV_PXE \
+-	BOOT_TARGET_DEVICES_references_PXE_without_CONFIG_CMD_DHCP_or_PXE
++    BOOT_TARGET_DEVICES_references_PXE_without_CONFIG_CMD_DHCP_or_PXE
+ #define BOOTENV_DEV_NAME_PXE \
+-	BOOT_TARGET_DEVICES_references_PXE_without_CONFIG_CMD_DHCP_or_PXE
++    BOOT_TARGET_DEVICES_references_PXE_without_CONFIG_CMD_DHCP_or_PXE
+ #endif
+ 
+ #if defined(CONFIG_CMD_EXTENSION)
+ #define BOOTENV_RUN_EXTENSION_INIT "run extension_init; "
+ #define BOOTENV_RUN_EXTENSION_APPLY "run extension_apply; "
+ #define BOOTENV_SET_EXTENSION_NEED_INIT \
+-	"extension_need_init=; " \
+-	"setenv extension_overlay_addr ${fdtoverlay_addr_r}; "
++    "extension_need_init=; " \
++    "setenv extension_overlay_addr ${fdtoverlay_addr_r}; "
+ #define BOOTENV_SHARED_EXTENSION \
+-	"extension_init=" \
+-		"echo Extension init...; " \
+-		"if ${extension_need_init}; then " \
+-			"extension_need_init=false; " \
+-			"extension scan; " \
+-		"fi\0" \
+-	\
+-	"extension_overlay_cmd=" \
+-		"load ${devtype} ${devnum}:${distro_bootpart} " \
+-			"${extension_overlay_addr} ${prefix}${extension_overlay_name}\0" \
+-	"extension_apply=" \
+-		"if fdt addr -q ${fdt_addr_r}; then " \
+-			"extension apply all; " \
+-		"fi\0"
++    "extension_init=" \
++        "echo Extension init...; " \
++        "if ${extension_need_init}; then " \
++            "extension_need_init=false; " \
++            "extension scan; " \
++        "fi\0" \
++    \
++    "extension_overlay_cmd=" \
++        "load ${devtype} ${devnum}:${distro_bootpart} " \
++            "${extension_overlay_addr} ${prefix}${extension_overlay_name}\0" \
++    "extension_apply=" \
++        "if fdt addr -q ${fdt_addr_r}; then " \
++            "extension apply all; " \
++        "fi\0"
+ #else
+ #define BOOTENV_RUN_EXTENSION_INIT
+ #define BOOTENV_RUN_EXTENSION_APPLY
+@@ -449,95 +449,103 @@
+ #endif
+ 
+ #define BOOTENV_DEV_NAME(devtypeu, devtypel, instance, ...) \
+-	BOOTENV_DEV_NAME_##devtypeu(devtypeu, devtypel, instance, ## __VA_ARGS__)
++    BOOTENV_DEV_NAME_##devtypeu(devtypeu, devtypel, instance, ## __VA_ARGS__)
+ #define BOOTENV_BOOT_TARGETS \
+-	"boot_targets=" BOOT_TARGET_DEVICES(BOOTENV_DEV_NAME) "\0"
++    "boot_targets=" BOOT_TARGET_DEVICES(BOOTENV_DEV_NAME) "\0"
+ 
+ #define BOOTENV_DEV(devtypeu, devtypel, instance, ...) \
+-	BOOTENV_DEV_##devtypeu(devtypeu, devtypel, instance, ## __VA_ARGS__)
++    BOOTENV_DEV_##devtypeu(devtypeu, devtypel, instance, ## __VA_ARGS__)
+ #define BOOTENV \
+-	BOOTENV_SHARED_HOST \
+-	BOOTENV_SHARED_MMC \
+-	BOOTENV_SHARED_PCI \
+-	BOOTENV_SHARED_USB \
+-	BOOTENV_SHARED_SATA \
+-	BOOTENV_SHARED_SCSI \
+-	BOOTENV_SHARED_NVME \
+-	BOOTENV_SHARED_IDE \
+-	BOOTENV_SHARED_UBIFS \
+-	BOOTENV_SHARED_EFI \
+-	BOOTENV_SHARED_VIRTIO \
+-	BOOTENV_SHARED_EXTENSION \
+-	"boot_prefixes=/ /boot/\0" \
+-	"boot_scripts=boot.scr.uimg boot.scr\0" \
+-	"boot_script_dhcp=boot.scr.uimg\0" \
+-	BOOTENV_BOOT_TARGETS \
+-	\
+-	"boot_syslinux_conf=extlinux/extlinux.conf\0" \
+-	"boot_extlinux="                                                  \
+-		"sysboot ${devtype} ${devnum}:${distro_bootpart} any "    \
+-			"${scriptaddr} ${prefix}${boot_syslinux_conf}\0"  \
+-	\
+-	"scan_dev_for_extlinux="                                          \
+-		"if test -e ${devtype} "                                  \
+-				"${devnum}:${distro_bootpart} "           \
+-				"${prefix}${boot_syslinux_conf}; then "   \
+-			"echo Found ${prefix}${boot_syslinux_conf}; "     \
+-			"run boot_extlinux; "                             \
+-			"echo EXTLINUX FAILED: continuing...; "           \
+-		"fi\0"                                                    \
+-	\
+-	"boot_a_script="                                                  \
+-		"load ${devtype} ${devnum}:${distro_bootpart} "           \
+-			"${scriptaddr} ${prefix}${script}; "              \
+-		"source ${scriptaddr}\0"                                  \
+-	\
+-	"scan_dev_for_scripts="                                           \
+-		"for script in ${boot_scripts}; do "                      \
+-			"if test -e ${devtype} "                          \
+-					"${devnum}:${distro_bootpart} "   \
+-					"${prefix}${script}; then "       \
+-				"echo Found U-Boot script "               \
+-					"${prefix}${script}; "            \
+-				"run boot_a_script; "                     \
+-				"echo SCRIPT FAILED: continuing...; "     \
+-			"fi; "                                            \
+-		"done\0"                                                  \
+-	\
+-	"scan_dev_for_boot="                                              \
+-		"echo Scanning ${devtype} "                               \
+-				"${devnum}:${distro_bootpart}...; "       \
+-		"for prefix in ${boot_prefixes}; do "                     \
+-			"run scan_dev_for_extlinux; "                     \
+-			"run scan_dev_for_scripts; "                      \
+-		"done;"                                                   \
+-		SCAN_DEV_FOR_EFI                                          \
+-		"\0"                                                      \
+-	\
+-	"scan_dev_for_boot_part="                                         \
+-		"part list ${devtype} ${devnum} -bootable devplist; "     \
+-		"env exists devplist || setenv devplist 1; "              \
+-		"for distro_bootpart in ${devplist}; do "                 \
+-			"if fstype ${devtype} "                           \
+-					"${devnum}:${distro_bootpart} "   \
+-					"bootfstype; then "               \
+-				"part uuid ${devtype} "                   \
+-					"${devnum}:${distro_bootpart} "   \
+-					"distro_bootpart_uuid ; "         \
+-				"run scan_dev_for_boot; "                 \
+-			"fi; "                                            \
+-		"done; "                                                  \
+-		"setenv devplist\0"					  \
+-	\
+-	BOOT_TARGET_DEVICES(BOOTENV_DEV)                                  \
+-	\
+-	"distro_bootcmd=" BOOTENV_SET_SCSI_NEED_INIT                      \
+-		BOOTENV_SET_NVME_NEED_INIT                                \
+-		BOOTENV_SET_IDE_NEED_INIT                                 \
+-		BOOTENV_SET_VIRTIO_NEED_INIT                              \
+-		BOOTENV_SET_EXTENSION_NEED_INIT                           \
+-		"for target in ${boot_targets}; do "                      \
+-			"run bootcmd_${target}; "                         \
+-		"done\0"
++    BOOTENV_SHARED_HOST \
++    BOOTENV_SHARED_MMC \
++    BOOTENV_SHARED_PCI \
++    BOOTENV_SHARED_USB \
++    BOOTENV_SHARED_SATA \
++    BOOTENV_SHARED_SCSI \
++    BOOTENV_SHARED_NVME \
++    BOOTENV_SHARED_IDE \
++    BOOTENV_SHARED_UBIFS \
++    BOOTENV_SHARED_EFI \
++    BOOTENV_SHARED_VIRTIO \
++    BOOTENV_SHARED_EXTENSION \
++    "boot_prefixes=/ /boot/\0" \
++    "boot_scripts=boot.scr.uimg boot.scr\0" \
++    "boot_script_dhcp=boot.scr.uimg\0" \
++    BOOTENV_BOOT_TARGETS \
++    \
++    "boot_syslinux_conf=extlinux/extlinux.conf\0" \
++    "boot_extlinux="                                                  \
++        "sysboot ${devtype} ${devnum}:${distro_bootpart} any "    \
++            "${scriptaddr} ${prefix}${boot_syslinux_conf}\0"  \
++    \
++    "scan_dev_for_extlinux="                                          \
++        "if test -e ${devtype} "                                  \
++                "${devnum}:${distro_bootpart} "           \
++                "${prefix}${boot_syslinux_conf}; then "   \
++            "echo Found ${prefix}${boot_syslinux_conf}; "     \
++            "run boot_extlinux; "                             \
++            "echo EXTLINUX FAILED: continuing...; "           \
++        "fi\0"                                                    \
++    \
++    "boot_a_script="                                                  \
++        "load ${devtype} ${devnum}:${distro_bootpart} "           \
++            "${scriptaddr} ${prefix}${script}; "              \
++        "source ${scriptaddr}\0"                                  \
++    \
++    "scan_dev_for_scripts="                                           \
++        "for script in ${boot_scripts}; do "                      \
++            "if test -e ${devtype} "                          \
++                    "${devnum}:${distro_bootpart} "   \
++                    "${prefix}${script}; then "       \
++                "echo Found U-Boot script "               \
++                    "${prefix}${script}; "            \
++                "run boot_a_script; "                     \
++                "echo SCRIPT FAILED: continuing...; "     \
++            "fi; "                                            \
++        "done\0"                                                  \
++    \
++    "scan_dev_for_boot="                                              \
++        "echo Scanning ${devtype} "                               \
++                "${devnum}:${distro_bootpart}...; "       \
++        "for prefix in ${boot_prefixes}; do "                     \
++            "run scan_dev_for_extlinux; "                     \
++            "run scan_dev_for_scripts; "                      \
++        "done;"                                                   \
++        SCAN_DEV_FOR_EFI                                          \
++        "\0"                                                      \
++    \
++    "scan_dev_for_boot_part="                                         \
++        "part list ${devtype} ${devnum} -bootable devplist; "     \
++        "env exists devplist || setenv devplist 1; "              \
++        "for distro_bootpart in ${devplist}; do "                 \
++            "if fstype ${devtype} "                           \
++                    "${devnum}:${distro_bootpart} "   \
++                    "bootfstype; then "               \
++                "part uuid ${devtype} "                   \
++                    "${devnum}:${distro_bootpart} "   \
++                    "distro_bootpart_uuid ; "         \
++                "run scan_dev_for_boot; "                 \
++            "fi; "                                            \
++        "done; "                                                  \
++        "setenv devplist\0"                   \
++    \
++    BOOT_TARGET_DEVICES(BOOTENV_DEV)                                  \
++    \
++        "distro_bootcmd= " \
++        "if test -e mmc 0:1 boot.scr; then " \
++        "echo --- Found boot.scr ---; " \
++        "fatload mmc 0:1 0x2000000 boot.scr; " \
++        "source 0x2000000; " \
++        "else " \
++        "echo boot.scr not found in fat.; " \
++        "fi; " \
++        BOOTENV_SET_SCSI_NEED_INIT                      \
++        BOOTENV_SET_NVME_NEED_INIT                                \
++        BOOTENV_SET_IDE_NEED_INIT                                 \
++        BOOTENV_SET_VIRTIO_NEED_INIT                              \
++        BOOTENV_SET_EXTENSION_NEED_INIT                           \
++        "for target in ${boot_targets}; do "                      \
++            "run bootcmd_${target}; "                         \
++        "done\0"
+ 
+ #endif  /* _CONFIG_CMD_DISTRO_BOOTCMD_H */

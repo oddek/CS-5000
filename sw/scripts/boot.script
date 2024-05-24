@@ -1,0 +1,11 @@
+rbf="fpga.rbf"
+
+setenv autoload no;
+dhcp;
+
+echo "Programming FPGA"
+fatload mmc 0:1 0x2000000 ${rbf};
+fpga load 0 0x2000000 $filesize;
+bridge enable;
+
+

@@ -1,0 +1,33 @@
+
+rbf="fpga-devkit.rbf"
+dtb="socfpga-devkit.dtb"
+kernel="zImage"
+kernelAddr="0x01000000"
+dtbAddr="0x02000000"
+rbfAddr="0x02000000"
+npath="/srv/nfs/rootfs
+
+setenv autoload no;
+dhcp;
+
+echo "IP Data:";
+echo $ipaddr;
+echo $serverip;
+
+echo "Programming FPGA";
+tftpboot ${rbfAddr} ${rbf};
+fpga load 0 ${rbfAddr} $filesize;
+bridge enable;
+
+echo "Loading Kernel";
+tftpboot ${kernelAddr} ${kernel};
+
+echo "Loading Device Tree";
+tftpboot ${dtbAddr} ${dtb};
+
+setenv bootargs console=ttyS0,115200n8 root=/dev/nfs rw nfsroot=${serverip}:${npath},nfsvers=3 ip=${ipaddr}:255.255.255.0:::off init=/sbin/init
+
+bootz ${kernelAddr} - ${dtbAddr}
+
+
+

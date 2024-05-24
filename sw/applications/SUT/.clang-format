@@ -1,0 +1,77 @@
+# Generated from CLion C/C++ Code Style settings
+BasedOnStyle: Microsoft
+PointerAlignment: Left
+ReferenceAlignment: Left
+#AccessModifierOffset: -4
+#AlignAfterOpenBracket: AlwaysBreak
+#AlignConsecutiveAssignments: Consecutive
+#AlignConsecutiveMacros: AcrossEmptyLinesAndComments
+#AlignOperands: Align
+#AllowAllArgumentsOnNextLine: false
+#AllowAllConstructorInitializersOnNextLine: false
+#AllowAllParametersOfDeclarationOnNextLine: false
+#AllowShortBlocksOnASingleLine: Empty
+#AllowShortCaseLabelsOnASingleLine: false
+#AllowShortFunctionsOnASingleLine: Empty
+#AllowShortIfStatementsOnASingleLine: Always
+#AllowShortLambdasOnASingleLine: All
+#AllowShortLoopsOnASingleLine: true
+#AlwaysBreakAfterReturnType: None
+#AlwaysBreakTemplateDeclarations: Yes
+#BinPackArguments: false
+#BinPackParameters: false
+#BreakBeforeBraces: Allman
+#BraceWrapping:
+#  AfterCaseLabel: false
+#  AfterClass: false
+#  AfterControlStatement: Never
+#  AfterEnum: false
+#  AfterFunction: true
+#  AfterNamespace: false
+#  AfterUnion: false
+#  BeforeCatch: false
+#  BeforeElse: false
+#  IndentBraces: false
+#  SplitEmptyFunction: false
+#  SplitEmptyRecord: true
+#BreakBeforeBinaryOperators: None
+#BreakBeforeTernaryOperators: true
+#BreakConstructorInitializers: BeforeColon
+#BreakInheritanceList: BeforeColon
+#ColumnLimit: 80
+#CompactNamespaces: false
+#ContinuationIndentWidth: 8
+#IndentCaseLabels: true
+#IndentPPDirectives: BeforeHash
+#IndentWidth: 4
+#InsertBraces: true
+#InsertNewlineAtEOF: true
+#KeepEmptyLinesAtTheStartOfBlocks: false
+#MaxEmptyLinesToKeep: 1
+#NamespaceIndentation: All
+#ObjCSpaceAfterProperty: false
+#ObjCSpaceBeforeProtocolList: true
+#PackConstructorInitializers: Never
+#PenaltyReturnTypeOnItsOwnLine: 900
+#PenaltyBreakAssignment: 21
+#PenaltyBreakBeforeFirstCallParameter: 1
+#ReflowComments: true
+#SeparateDefinitionBlocks: Always
+#SpaceAfterCStyleCast: true
+#SpaceAfterLogicalNot: false
+#SpaceAfterTemplateKeyword: false
+#SpaceBeforeAssignmentOperators: true
+#SpaceBeforeCpp11BracedList: false
+#SpaceBeforeCtorInitializerColon: true
+#SpaceBeforeInheritanceColon: true
+#SpaceBeforeParens: Never
+#SpaceBeforeRangeBasedForLoopColon: true
+#SpaceInEmptyParentheses: false
+#SpacesBeforeTrailingComments: 3
+#SpacesInAngles: false
+#SpacesInCStyleCastParentheses: false
+#SpacesInContainerLiterals: false
+#SpacesInParentheses: true
+#SpacesInSquareBrackets: false
+#TabWidth: 4
+#UseTab: Never
