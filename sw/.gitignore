@@ -1,0 +1,16 @@
+
+toolchain
+linux
+linux-socfpga
+linux-stable-rt
+linux-preempt-dynamic
+buildroot
+rootfs/*
+u-boot
+u-boot-socfpga
+deprecated
+sdimage
+sdfs
+tmp
+rootfs
+
